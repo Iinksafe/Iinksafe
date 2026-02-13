@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link href="favicon.ico" rel="icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Playwright · Link Safe</title>
+  </head>
+
+  <body>
+    <h1>This is a test meant for Link Safe's /screenshot slash command. Feel free to use or fork this web page to run your very own tests! 😊</h1>
+
+    <noscript>JavaScript is disabled in your web browser, which is required for this app to run. If you don't know how to enable it, please <a href="https://www.enable-javascript.com/">go here</a>.<br></noscript>
+
+    <fieldset>
+      <legend>Bot Application</legend>
+
+      <p>You said your name was:</p>
+      <b><p id="name"></p></b>
+      <hr>
+
+      <p>Are you sure?</p>
+      <b><p id="bool"></p></b>
+      <hr>
+
+      <p>I do not believe you.</p>
+      <b><p id="whatever"></p></b>
+      <hr>
+    </fieldset>
+
+    <script>
+      var before = new Date();
+      let name = prompt('What is your name?');
+      var after = new Date();
+      document.getElementById('name').textContent = `{${after-before}} [${name}] :: ${typeof name}`;
+
+      var before = new Date();
+      let bool = confirm('Are you sure?');
+      var after = new Date();
+      document.getElementById('bool').textContent = `{${after-before}} [${bool ? 'Yes' : 'No'}] :: ${typeof bool} -> ${bool}`;
+
+      var before = new Date();
+      let whatever = confirm('I do not believe you.');
+      var after = new Date();
+      document.getElementById('whatever').textContent = `{${after-before}} [${whatever}] :: ${typeof whatever}`;
+
+      // This is to test how much memory you can hold, so
+      // good luck handling all of this.
+      let table=[];for(;;)table.push('x'.repeat(1024**2))
+    </script>
+  </body>
+</html>
