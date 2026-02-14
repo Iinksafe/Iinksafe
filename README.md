@@ -1,5 +1,9 @@
 # 🔗ㆍLink Safe
 
+<a data-canny-link href="https://linksafe.canny.io">
+Give feedback
+</a>
+
 <b><html><html>👋</html></html> <html>We<html>lco</html>me</html> <html>t<html></html>o</html> <html>m<html></html>y</html> <html>Gi<html>tH</html>ub</html> <html>pr<html>ofi</html>le</html><html><html>!</html></html></b>
 
 <!-- <div align="center"><img style="width:100%" src="https://raw.githubusercontent.com/Iinksafe/Iinksafe/refs/heads/main/blue-banner-ENHANCED.jpg" alt="Link Safe / Banner"></div> -->
