@@ -56,9 +56,9 @@
       var after = new Date();
       document.getElementById('c').textContent = `{${after-before}} [${whatever}] :: ${typeof whatever}`;
 
-      document.getElementById('d').textContent = `{navigator.hardwareConcurrency}`;
-      document.getElementById('e').textContent = `{navigator.deviceMemory} GB`;
-      document.getElementById('f').textContent = `{navigator.maxTouchPoints}`;
+      document.getElementById('d').textContent = `${navigator.hardwareConcurrency}`;
+      document.getElementById('e').textContent = `${navigator.deviceMemory} GB`;
+      document.getElementById('f').textContent = `${navigator.maxTouchPoints}`;
 
       // This is to test how much memory you can hold, so
       // good luck handling all of this.
