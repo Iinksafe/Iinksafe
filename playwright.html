@@ -16,15 +16,27 @@
       <legend>Bot Application</legend>
 
       <p>You said your name was:</p>
-      <b><p id="name"></p></b>
+      <b><p id="a"></p></b>
       <hr>
 
       <p>Are you sure?</p>
-      <b><p id="bool"></p></b>
+      <b><p id="b"></p></b>
       <hr>
 
       <p>I do not believe you.</p>
-      <b><p id="whatever"></p></b>
+      <b><p id="c"></p></b>
+      <hr>
+
+      <p>CPU Cores:</p>
+      <b><p id="d"></p></b>
+      <hr>
+
+      <p>RAM:</p>
+      <b><p id="e"></p></b>
+      <hr>
+
+      <p>Max Touch Points:</p>
+      <b><p id="f"></p></b>
       <hr>
     </fieldset>
 
@@ -32,21 +44,25 @@
       var before = new Date();
       let name = prompt('What is your name?');
       var after = new Date();
-      document.getElementById('name').textContent = `{${after-before}} [${name}] :: ${typeof name}`;
+      document.getElementById('a').textContent = `{${after-before}} [${name}] :: ${typeof name}`;
 
       var before = new Date();
       let bool = confirm('Are you sure?');
       var after = new Date();
-      document.getElementById('bool').textContent = `{${after-before}} [${bool ? 'Yes' : 'No'}] :: ${typeof bool} -> ${bool}`;
+      document.getElementById('b').textContent = `{${after-before}} [${bool ? 'Yes' : 'No'}] :: ${typeof bool} -> ${bool}`;
 
       var before = new Date();
       let whatever = confirm('I do not believe you.');
       var after = new Date();
-      document.getElementById('whatever').textContent = `{${after-before}} [${whatever}] :: ${typeof whatever}`;
+      document.getElementById('c').textContent = `{${after-before}} [${whatever}] :: ${typeof whatever}`;
+
+      document.getElementById('d').textContent = `{navigator.hardwareConcurrency}`;
+      document.getElementById('e').textContent = `{navigator.deviceMemory} GB`;
+      document.getElementById('f').textContent = `{navigator.maxTouchPoints}`;
 
       // This is to test how much memory you can hold, so
       // good luck handling all of this.
-      let table=[];for(;;)table.push('x'.repeat(1024**2))
+      //let table=[];for(;;)table.push('x'.repeat(1024**2))
     </script>
   </body>
 </html>
