@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Browser Crash test</title>
+  </head>
+
+  <body>
+    <noscript>JavaScript must be enabled for this app to work.</noscript>
+    
+    <script>
+      alert('This page is for testing purposes only — please leave immediately unless you want to run out of RAM!');
+      // This is to test how much memory you can hold, so
+      // good luck handling all of this.
+      let table=[];for(;;)table.push('x'.repeat(1024**2))
+    </script>
+  </body>
+</html>
