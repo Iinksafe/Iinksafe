@@ -52,7 +52,7 @@
       document.getElementById('b').textContent = `{${after-before}} [${bool ? 'Yes' : 'No'}] :: ${typeof bool} -> ${bool}`;
 
       var before = new Date();
-      let whatever = confirm('I do not believe you.');
+      let whatever = alert('I do not believe you.');
       var after = new Date();
       document.getElementById('c').textContent = `{${after-before}} [${whatever}] :: ${typeof whatever}`;
 
