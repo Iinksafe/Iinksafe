@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Console.log Crash Test</title>
+  </head>
+
+  <body>
+    <noscript>JavaScript must be enabled for this app to work.</noscript>
+    
+    <script>
+      // clog :: console.log
+      alert('Please exit immediately as this page will LOCK UP your browser. You have been warned.');
+      setInterval(() => setInterval(() => console.log('OK'), 0), 0);
+    </script>
+  </body>
+</html>
