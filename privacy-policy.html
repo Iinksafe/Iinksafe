@@ -13,7 +13,7 @@
     }
 
     * {
-         font-family: Tahoma, monospace;
+         font-family: Verdana, Geneva, sans-serif;
       }
 
     body {
@@ -21,7 +21,6 @@
       margin: 0;
       padding: 0 0rem;
       line-height: 1.5;
-      background: linear-gradient(135deg, #5865f2, #b26ff2);
       background: linear-gradient(135deg, #cc99ff, #5865f2);
       color: var(--text-color);
     }
@@ -106,31 +105,26 @@
       <ul>
         <li>The Service may store the following data:
             <ul>
-                <li><b>Message Content:</b> For logging purposes, when a message is <u>edi</u>ted or <u>dele</u>ted, a temporary <a href="https://eu.onetimesecret.com/">OneTimeSecret</a> link is generated with automatic expiry automatically set to 30 days of inactivity, or after the link has been accessed.
+                <li><b>Message Content:</b>
+                    <center><i><hr style="border-color: white">For logging purposes, when a message is <u>edi</u>ted or <u>dele</u>ted, a temporary <a href="https://eu.onetimesecret.com/">OneTimeSecret</a> link is generated with automatic expiry automatically set to 30 days of inactivity, or after the link has been accessed.<hr style="border-color: white"></i></center>
                     <ul>
                         <li>This link is protected with a <b>randomly-generated password</b> (32 characters long).</li>
                         <li>This link is stored securely within <b>OneTimeSecret</b> servers in the <b>European Union</b>.</li>
                     </ul>
                 </li>
+                <br>
                 <li><b>User ID:</b>
+                    <center><i><hr style="border-color: white">An identifier that never changes and is associated with a Discord account.<hr style="border-color: white"></i></center>
                     <ul>
-                        <li>Two-Factor Authentication (<b>2FA</b>) system for administrative commands.</li>
+                        <li><b>Two-Factor Authentication</b> (<b>2FA</b>) system for administrative commands.</li>
                     </ul>
                 </li>
             </ul>
+            <br>
         </li>
+        <li>*<b>Sudo Mode:</b> A <b>SHA3-512</b> (Keccak Sponge Construction) one-way, non-reversible <b>hash</b> with ~700,000 iterations is computed from the passphrase you provide.</li>
         <li>No private information is retained passively or without your knowledge.</li>
       </ul>
-    </section>
-
-    <section>
-      <h2 id="security_encryption">Security & Encryption</h2>
-      <p>Link Safe enhances server security using cryptographic techniques such as:</p>
-      <ul>
-        <li><b>Two-Factor Authentication (2FA)</b></li>
-        <li><b>Fernet encryption</b>: a symmetric-key algorithm that ensures both confidentiality and data integrity.</li>
-      </ul>
-      <p>All sensitive data processed by the Service is encrypted and verified before any further handling.</p>
     </section>
 
     <section>
