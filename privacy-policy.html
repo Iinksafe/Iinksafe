@@ -12,12 +12,11 @@
       --text-color: #fff;
     }
 
-    * {
+    *:not(code) {
          font-family: Verdana, Geneva, sans-serif;
       }
 
     body {
-      /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
       margin: 0;
       padding: 0 0rem;
       line-height: 1.5;
@@ -103,7 +102,7 @@
     <section>
       <h2 id="data_collection_storage">Data Collection & Storage</h2>
       <ul>
-        <li>The Service may store the following data:
+        <li>The Service may store the following data (in servers only):
             <ul>
                 <li><b>Message Content:</b>
                     <center><i><hr style="border-color: white">For logging purposes, when a message is <u>edi</u>ted or <u>dele</u>ted, a temporary <a href="https://eu.onetimesecret.com/">OneTimeSecret</a> link is generated with automatic expiry automatically set to 30 days of inactivity, or after the link has been accessed.<hr style="border-color: white"></i></center>
@@ -116,7 +115,9 @@
                 <li><b>User ID:</b>
                     <center><i><hr style="border-color: white">An identifier that never changes and is associated with a Discord account.<hr style="border-color: white"></i></center>
                     <ul>
-                        <li><b>Two-Factor Authentication</b> (<b>2FA</b>) system for administrative commands.</li>
+                        <li><b>Two-Factor Authentication</b> (<code>/2fa</code>) system for administrative commands.</li>
+                        <li>Changing the <b>User Language</b> (<code>/set-user-language</code>).</li>
+                        <li><b>Service Suspensions</b>.</li>
                     </ul>
                 </li>
             </ul>
