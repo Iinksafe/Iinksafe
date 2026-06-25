@@ -1,7 +1,7 @@
 # 🔗ㆍLink Safe
 
 <!-- <div align="center"><a href="#"><img style="width:100%" src="https://raw.githubusercontent.com/Iinksafe/Iinksafe/refs/heads/main/purple-banner.jpg" alt="Link Safe / Banner"></a></div> -->
-<div align="center"><a href="#"><img style="width:100%" src="https://raw.githubusercontent.com/Iinksafe/Iinksafe/refs/heads/main/blue-banner-ENHANCED.jpg" alt="Link Safe / Banner"></a></div>
+<div align="center"><a href="#"><img style="width:100%" src="https://raw.githubusercontent.com/Iinksafe/Iinksafe/refs/heads/main/dark.png" alt="Link Safe / Banner"></a></div>
 
 <hr>
 
