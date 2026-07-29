@@ -98,7 +98,7 @@
 	
 					let elapsed = after-before;
 	
-					document.getElementById(elid).textContent = `<code>${path}</code> time: ${elapsed} seconds`;
+					document.getElementById(elid).textContent = `${path}: ${elapsed}ms`;
 				};
 	
 				/////////////////////////
@@ -115,7 +115,7 @@
 	
 				let elapsed = pafter-pbefore;
 	
-				document.getElementById('j').textContent = `Elapsed total: ${elapsed} seconds`;
+				document.getElementById('j').textContent = `Elapsed total: ${elapsed}ms`;
 			}
 
 			hij();  // Whatever happens next, we have no idea LOL
