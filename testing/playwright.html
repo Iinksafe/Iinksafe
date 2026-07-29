@@ -97,6 +97,8 @@
 					let after = new Date();
 	
 					let elapsed = after-before;
+
+					console.log(path, 'done after', elapsed, 'ms');
 	
 					document.getElementById(elid).textContent = `${path}: ${elapsed}ms`;
 				};
