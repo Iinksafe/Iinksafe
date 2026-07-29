@@ -92,10 +92,17 @@
 				document.getElementById(elid).textContent = `<code>${path}</code> time: ${elapsed} seconds`;
 			};
 
+			/////////////////////////
 			let pbefore = new Date();
+			
 			p1 = send_request('/p1');
 			p2 = send_request('/p2');
+
+			r1 = await p1;
+			r2 = await p2;
+			
 			let pafter = new Date();
+			////////////////////////
 
 			let elapsed = pafter-pbefore;
 
