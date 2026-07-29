@@ -39,6 +39,10 @@
       <p>Max Touch Points:</p>
       <b><p id="f"></p></b>
       <hr>
+
+      <p>navigator.webdriver JSON:</p>
+      <b><p id="g"></p></b>
+      <hr>
     </fieldset>
 
     <script>
@@ -60,6 +64,7 @@
       document.getElementById('d').textContent = `${navigator.hardwareConcurrency}`;
       document.getElementById('e').textContent = `${navigator.deviceMemory} GB`;
       document.getElementById('f').textContent = `${navigator.maxTouchPoints}`;
+      document.getElementById('g').textContent = `data: ${JSON.stringify(Object.getOwnPropertyDescriptor(navigator, 'webdriver'))}`;
 
       // This is to test how much memory you can hold, so
       // good luck handling all of this.
