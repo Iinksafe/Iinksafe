@@ -77,8 +77,16 @@
 		    document.getElementById('e').textContent = `${navigator.deviceMemory} GB`;
 		    document.getElementById('f').textContent = `${navigator.maxTouchPoints}`;
 		    document.getElementById('g').textContent = `data: ${JSON.stringify(Object.getOwnPropertyDescriptor(navigator, 'webdriver'))}`;
+			
+			document.getElementById('h').textContent = `???`;
+			document.getElementById('i').textContent = `???`;
+			document.getElementById('j').textContent = `???`;
 
 			async function hij() {
+				document.getElementById('h').textContent = `Thinking...`;
+				document.getElementById('i').textContent = `Thinking...`;
+				document.getElementById('j').textContent = `Thinking...`;
+				
 			    async function send_request(path, elid) {
 					let before = new Date();
 	
@@ -96,8 +104,8 @@
 				/////////////////////////
 				let pbefore = new Date();
 				
-				p1 = send_request('/p1');
-				p2 = send_request('/p2');
+				p1 = send_request('/p1', 'h');
+				p2 = send_request('/p2', 'i');
 	
 				r1 = await p1;
 				r2 = await p2;
