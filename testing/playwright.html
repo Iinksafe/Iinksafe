@@ -1,74 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link href="../favicon.ico" rel="icon">
-    <title>Playwright · Link Safe</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+	  <meta charset="UTF-8" />
+      <link href="../favicon.ico" rel="icon">
+      <title>Playwright · Link Safe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	  <style>* { background-color: black; color: rgb(0,255,0); border-color: rgb(0,255,0) }</style>
-  </head>
+	</head>
+	
+	<body>
+		<h1>This is a test meant for Link Safe's /screenshot slash command. Feel free to use or fork this web page to run your very own tests! 😊</h1>
+		
+		<noscript>JavaScript is disabled in your web browser, which is required for this app to run. If you don't know how to enable it, please <a href="https://www.enable-javascript.com/">go here</a>.<br></noscript>
+		
+		<fieldset>
+			<legend>Bot Application</legend>
+	
+	        <p>You said your name was:</p>
+	        <b><p id="a"></p></b>
+	        <hr>
+	
+	        <p>Are you sure?</p>
+	        <b><p id="b"></p></b>
+	        <hr>
+	
+	        <p>I do not believe you.</p>
+	        <b><p id="c"></p></b>
+	        <hr>
+	
+	        <p>CPU Cores:</p>
+	        <b><p id="d"></p></b>
+	        <hr>
+	
+	        <p>RAM:</p>
+	        <b><p id="e"></p></b>
+	        <hr>
+	
+	        <p>Max Touch Points:</p>
+	        <b><p id="f"></p></b>
+	        <hr>
+	
+	        <p>navigator.webdriver JSON:</p>
+	        <b><p id="g"></p></b>
+			<hr>
+	
+	        <p>First Request:</p>
+	        <b><p id="h"></p></b>
+			<hr>
+			
+	        <p>Second Request:</p>
+	        <b><p id="i"></p></b>
+	        <hr>
+			
+	        <p>Elapsed total:</p>
+	        <b><p id="j"></p></b>
+	        <hr>
+		</fieldset>
+		
+		<script>
+			var before = new Date();
+			let name = prompt('What is your name?');
+			var after = new Date();
+			document.getElementById('a').textContent = `{${after-before}} [${name}] :: ${typeof name}`;
 
-  <body>
-    <h1>This is a test meant for Link Safe's /screenshot slash command. Feel free to use or fork this web page to run your very own tests! 😊</h1>
+		    var before = new Date();
+		    let bool = confirm('Are you sure?');
+		    var after = new Date();
+		    document.getElementById('b').textContent = `{${after-before}} [${bool ? 'Yes' : 'No'}] :: ${typeof bool} -> ${bool}`;
 
-    <noscript>JavaScript is disabled in your web browser, which is required for this app to run. If you don't know how to enable it, please <a href="https://www.enable-javascript.com/">go here</a>.<br></noscript>
+		    var before = new Date();
+		    let whatever = alert('I do not believe you.');
+		    var after = new Date();
+		    document.getElementById('c').textContent = `{${after-before}} [${whatever}] :: ${typeof whatever}`;
 
-    <fieldset>
-      <legend>Bot Application</legend>
+		    document.getElementById('d').textContent = `${navigator.hardwareConcurrency}`;
+		    document.getElementById('e').textContent = `${navigator.deviceMemory} GB`;
+		    document.getElementById('f').textContent = `${navigator.maxTouchPoints}`;
+		    document.getElementById('g').textContent = `data: ${JSON.stringify(Object.getOwnPropertyDescriptor(navigator, 'webdriver'))}`;
 
-      <p>You said your name was:</p>
-      <b><p id="a"></p></b>
-      <hr>
+		    async function send_request(path, elid) {
+				let before = new Date();
 
-      <p>Are you sure?</p>
-      <b><p id="b"></p></b>
-      <hr>
+			    let response = await fetch(
+					path
+				);
 
-      <p>I do not believe you.</p>
-      <b><p id="c"></p></b>
-      <hr>
+				let after = new Date();
 
-      <p>CPU Cores:</p>
-      <b><p id="d"></p></b>
-      <hr>
+				let elapsed = after-before;
 
-      <p>RAM:</p>
-      <b><p id="e"></p></b>
-      <hr>
+				document.getElementById(elid).textContent = `<code>${path}</code> time: ${elapsed} seconds`;
+			};
 
-      <p>Max Touch Points:</p>
-      <b><p id="f"></p></b>
-      <hr>
+			let pbefore = new Date();
+			p1 = send_request('/p1');
+			p2 = send_request('/p2');
+			let pafter = new Date();
 
-      <p>navigator.webdriver JSON:</p>
-      <b><p id="g"></p></b>
-      <hr>
-    </fieldset>
+			let elapsed = pafter-pbefore;
 
-    <script>
-      var before = new Date();
-      let name = prompt('What is your name?');
-      var after = new Date();
-      document.getElementById('a').textContent = `{${after-before}} [${name}] :: ${typeof name}`;
+			document.getElementById('j').textContent = `Elapsed total: ${elapsed} seconds`;
 
-      var before = new Date();
-      let bool = confirm('Are you sure?');
-      var after = new Date();
-      document.getElementById('b').textContent = `{${after-before}} [${bool ? 'Yes' : 'No'}] :: ${typeof bool} -> ${bool}`;
-
-      var before = new Date();
-      let whatever = alert('I do not believe you.');
-      var after = new Date();
-      document.getElementById('c').textContent = `{${after-before}} [${whatever}] :: ${typeof whatever}`;
-
-      document.getElementById('d').textContent = `${navigator.hardwareConcurrency}`;
-      document.getElementById('e').textContent = `${navigator.deviceMemory} GB`;
-      document.getElementById('f').textContent = `${navigator.maxTouchPoints}`;
-      document.getElementById('g').textContent = `data: ${JSON.stringify(Object.getOwnPropertyDescriptor(navigator, 'webdriver'))}`;
-
-      // This is to test how much memory you can hold, so
-      // good luck handling all of this.
-      //let table=[];for(;;)table.push('x'.repeat(1024**2))
-    </script>
-  </body>
+			//let table=[];for(;;)table.push('x'.repeat(1024**2))
+		</script>
+	</body>
 </html>
