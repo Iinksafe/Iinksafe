@@ -78,35 +78,39 @@
 		    document.getElementById('f').textContent = `${navigator.maxTouchPoints}`;
 		    document.getElementById('g').textContent = `data: ${JSON.stringify(Object.getOwnPropertyDescriptor(navigator, 'webdriver'))}`;
 
-		    async function send_request(path, elid) {
-				let before = new Date();
+			async function hij() {
+			    async function send_request(path, elid) {
+					let before = new Date();
+	
+				    let response = await fetch(
+						path
+					);
+	
+					let after = new Date();
+	
+					let elapsed = after-before;
+	
+					document.getElementById(elid).textContent = `<code>${path}</code> time: ${elapsed} seconds`;
+				};
+	
+				/////////////////////////
+				let pbefore = new Date();
+				
+				p1 = send_request('/p1');
+				p2 = send_request('/p2');
+	
+				r1 = await p1;
+				r2 = await p2;
+				
+				let pafter = new Date();
+				////////////////////////
+	
+				let elapsed = pafter-pbefore;
+	
+				document.getElementById('j').textContent = `Elapsed total: ${elapsed} seconds`;
+			}
 
-			    let response = await fetch(
-					path
-				);
-
-				let after = new Date();
-
-				let elapsed = after-before;
-
-				document.getElementById(elid).textContent = `<code>${path}</code> time: ${elapsed} seconds`;
-			};
-
-			/////////////////////////
-			let pbefore = new Date();
-			
-			p1 = send_request('/p1');
-			p2 = send_request('/p2');
-
-			r1 = await p1;
-			r2 = await p2;
-			
-			let pafter = new Date();
-			////////////////////////
-
-			let elapsed = pafter-pbefore;
-
-			document.getElementById('j').textContent = `Elapsed total: ${elapsed} seconds`;
+			hij();  // Whatever happens next, we have no idea LOL
 
 			//let table=[];for(;;)table.push('x'.repeat(1024**2))
 		</script>
